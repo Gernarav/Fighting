@@ -13,10 +13,16 @@ namespace Fighting.Entites
         public int posX;
         public int posY;
 
+        public int dirX;
+        public int dirY;
+        public bool isMoving;
+
         public int idleFrames;
         public int runFrames;
         public int attackFrames;
         public int deathFrames;
+
+        public Tuple<int,int> size;
 
         public Image spriteSheet;
 
@@ -29,9 +35,11 @@ namespace Fighting.Entites
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
             this.spriteSheet = spriteSheet;
+            var size = new Tuple<int, int>(230, 380);
+            this.size = size;
         }
 
-        public void Move(int dirX, int dirY)
+        public void Move()
         {
             posX += dirX;
             posY += dirY;
