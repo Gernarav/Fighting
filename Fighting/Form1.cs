@@ -1,6 +1,4 @@
-﻿using Fighting.Entites;
-using Fighting.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,72 +13,56 @@ namespace Fighting
 {
     public partial class Form1 : Form
     {
-        public Image IronMan;
-        public Entity player;
+        public static Timer timer1;
         public Form1()
         {
             InitializeComponent();
+            View.Start();
 
             timer1.Interval = 20;
             timer1.Tick += new EventHandler(Update);
+            timer1.Start();
 
             KeyDown += new KeyEventHandler(OnPress);
             KeyUp += new KeyEventHandler(OnKeyUp);
-
-
-            Init();
+            Invalidate();
         }
-
-        public void OnKeyUp(object sender, KeyEventArgs e)
+        void Update(object sender, EventArgs e)
         {
-            player.dirX = 0;
-            player.dirY = 0;
-            player.isMoving = false;
-        }
-
-        public void OnPress(object sender, KeyEventArgs e)
-        {
-            switch(e.KeyCode)
-            {
-                case Keys.W:
-                    player.dirY = -10;
-                    break;
-                case Keys.A:
-                    player.dirX = -10;
-                    break;
-                case Keys.S:
-                    player.dirY = 10;
-                    break;
-                case Keys.D:
-                    player.dirX = 10;
-                    break;
-            }
-            player.isMoving = true;
-        }
-
-        public void Init()
-        {
-            //var dir = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            IronMan = new Bitmap("C:\\Users\\expla\\source\\repos\\Fighting\\Fighting\\Sprites\\IronMan.png");
-            player = new Entity(100, 100, Hero.idleFrames, Hero.runFrames, Hero.attackFrames, Hero.deathFrames, IronMan);
-            timer1.Start();
-        }
-
-        public void Update(object sender, EventArgs e)
-        {
-            if (player.isMoving)
-                player.Move();
-
+            if (View.player.isMoving)
+                View.player.Move();
             Invalidate();
         }
 
-        private void OnPaint(object sender, PaintEventArgs e)
+        public static void OnKeyUp(object sender, KeyEventArgs e)
         {
-            Graphics g = e.Graphics;
-            //отрисовка части спрайта
-            g.DrawImage(player.spriteSheet, new Rectangle(new Point(player.posX, player.posY), 
-                new Size(player.size.Item1, player.size.Item2)), 0, 0, player.size.Item1, player.size.Item2, 
-                GraphicsUnit.Pixel);
+            View.player.dirX = 0;
+            View.player.dirY = 0;
+            View.player.isMoving = false;
+        }
+
+        public static void OnPress(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.W:
+                    View.player.dirY = -10;
+                    break;
+                case Keys.A:
+                    View.player.dirX = -10;
+                    break;
+                case Keys.S:
+                    View.player.dirY = 10;
+                    break;
+                case Keys.D:
+                    View.player.dirX = 10;
+                    break;
+                case Keys.Escape:
+                    Application.Exit();
+                    break;
+            }
+
+            View.player.isMoving = true;
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Threading;
 
-namespace Fighting.Entites
+namespace Fighting
 {
     public class Entity
     {
@@ -22,7 +21,7 @@ namespace Fighting.Entites
         public int attackFrames;
         public int deathFrames;
 
-        public Tuple<int,int> size;
+        public Tuple<int, int> size;
 
         public Image spriteSheet;
 
@@ -45,5 +44,12 @@ namespace Fighting.Entites
             posY += dirY;
         }
     }
+
+    public static class Hero
+    {
+        public static int idleFrames = 5;
+        public static int runFrames = 8;
+        public static int attackFrames = 7;
+        public static int deathFrames = 7;
+    }
 }
-    
