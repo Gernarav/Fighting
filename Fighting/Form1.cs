@@ -13,7 +13,6 @@ namespace Fighting
 {
     public partial class Form1 : Form
     {
-        public static Timer timer1;
         public Form1()
         {
             InitializeComponent();
