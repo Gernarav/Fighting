@@ -173,6 +173,16 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SubZero_sprites {
+            get {
+                object obj = ResourceManager.GetObject("SubZero_sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tutorial_button {
             get {
                 object obj = ResourceManager.GetObject("tutorial_button", resourceCulture);

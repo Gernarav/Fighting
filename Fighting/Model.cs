@@ -18,6 +18,8 @@ namespace Fighting
 
         public int idleFrames;
         public int walkFrames;
+        public int sitFrames;
+        public int jumpFrames;
         public int attackFrames;
         public int deathFrames;
 
@@ -29,12 +31,14 @@ namespace Fighting
 
         public Image spriteSheet;
 
-        public Entity(int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image spriteSheet)
+        public Entity(int posX, int posY, int idleFrames, int walkFrames, int sitFrames, int jumpFrames, int attackFrames, int deathFrames, Image spriteSheet)
         {
             this.posX = posX;
             this.posY = posY;
             this.idleFrames = idleFrames;
             this.walkFrames = walkFrames;
+            this.sitFrames = sitFrames;
+            this.jumpFrames = jumpFrames;
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
             this.spriteSheet = spriteSheet;
@@ -50,13 +54,43 @@ namespace Fighting
             posX += dirX;
             posY += dirY;
         }
+
+        public void SetAnimation(int currentAnimation)
+        {
+            this.currentAnimation = currentAnimation;
+
+            switch(currentAnimation)
+            {
+                case 0:
+                    currentLimit = idleFrames;
+                    break;
+                case 1:
+                    currentLimit = walkFrames;
+                    break;
+                case 2:
+                    currentLimit = sitFrames;
+                    break;
+                case 3:
+                    currentLimit = jumpFrames;
+                    break;
+                case 4:
+                    currentLimit = attackFrames;
+                    
+                    break;
+                case 5:
+                    currentLimit = deathFrames;
+                    break;
+            }
+        }
     }
 
     public static class Hero
     {
         public static int idleFrames = 8;
         public static int walkFrames = 8;
-        public static int attackFrames = 7;
+        public static int sitFrames = 3;
+        public static int jumpFrames = 5;
+        public static int attackFrames = 14;
         public static int deathFrames = 5;
     }
 }
