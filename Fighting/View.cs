@@ -1,33 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//this.Paint += new System.Windows.Forms.PaintEventHandler(View.OnPaint);
 namespace Fighting
 {
     class View
     {
-        public static Image IronMan;
-        public static Entity player;
+        public static Image hero1;
+        public static Entity player1;
         public static void OnPaint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            //отрисовка части спрайта
-            g.DrawImage(player.spriteSheet, new Rectangle(new Point(player.posX, player.posY),
-                new Size(player.size.Item1, player.size.Item2)), 0, 0, player.size.Item1, player.size.Item2,
+            if (player1.currentFrame < player1.currentLimit - 1)
+                player1.currentFrame++;
+            else player1.currentFrame = 0;
+
+            g.DrawImage(player1.spriteSheet, 
+                new Rectangle(new Point(player1.posX, player1.posY),
+                new Size(player1.size.Item1, player1.size.Item2)), 
+                player1.size.Item1*player1.currentFrame, 
+                player1.size.Item2*player1.currentAnimation, 
+                player1.size.Item1, player1.size.Item2,
                 GraphicsUnit.Pixel);
         }
 
         public static void Start()
         {
-            IronMan = new Bitmap(Resource1.IronMan);
-            player = new Entity(100, 100, Hero.idleFrames, Hero.runFrames, Hero.attackFrames, Hero.deathFrames, IronMan);
+            hero1 = new Bitmap(Resource1.Scorpion_sprites);
+            player1 = new Entity(30, 750, Hero.idleFrames, Hero.walkFrames, Hero.attackFrames, Hero.deathFrames, hero1);
         }
     }
 }

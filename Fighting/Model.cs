@@ -17,25 +17,32 @@ namespace Fighting
         public bool isMoving;
 
         public int idleFrames;
-        public int runFrames;
+        public int walkFrames;
         public int attackFrames;
         public int deathFrames;
+
+        public int currentAnimation;
+        public int currentFrame;
+        public int currentLimit;
 
         public Tuple<int, int> size;
 
         public Image spriteSheet;
 
-        public Entity(int posX, int posY, int idleFrames, int runFrames, int attackFrames, int deathFrames, Image spriteSheet)
+        public Entity(int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image spriteSheet)
         {
             this.posX = posX;
             this.posY = posY;
             this.idleFrames = idleFrames;
-            this.runFrames = runFrames;
+            this.walkFrames = walkFrames;
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
             this.spriteSheet = spriteSheet;
-            var size = new Tuple<int, int>(230, 380);
+            var size = new Tuple<int, int>(120, 291);
             this.size = size;
+            currentAnimation = 0;
+            currentFrame = 0;
+            currentLimit = idleFrames;
         }
 
         public void Move()
@@ -47,9 +54,9 @@ namespace Fighting
 
     public static class Hero
     {
-        public static int idleFrames = 5;
-        public static int runFrames = 8;
+        public static int idleFrames = 8;
+        public static int walkFrames = 8;
         public static int attackFrames = 7;
-        public static int deathFrames = 7;
+        public static int deathFrames = 5;
     }
 }
