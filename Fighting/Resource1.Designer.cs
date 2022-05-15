@@ -83,16 +83,6 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IronMan {
-            get {
-                object obj = ResourceManager.GetObject("IronMan", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Main_menu_form {
             get {
                 object obj = ResourceManager.GetObject("Main_menu_form", resourceCulture);
@@ -126,6 +116,16 @@ namespace Fighting {
         internal static System.Drawing.Bitmap power_off_icon {
             get {
                 object obj = ResourceManager.GetObject("power_off_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RED {
+            get {
+                object obj = ResourceManager.GetObject("RED", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

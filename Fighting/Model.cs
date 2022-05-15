@@ -42,8 +42,7 @@ namespace Fighting
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
             this.spriteSheet = spriteSheet;
-            var size = new Tuple<int, int>(120, 291);
-            this.size = size;
+            this.size = new Tuple<int, int>(519, 476);
             currentAnimation = 0;
             currentFrame = 0;
             currentLimit = idleFrames;
@@ -86,8 +85,8 @@ namespace Fighting
 
     public static class Hero
     {
-        public static int idleFrames = 8;
-        public static int walkFrames = 8;
+        public static int idleFrames = 24;
+        public static int walkFrames = 24;
         public static int sitFrames = 3;
         public static int jumpFrames = 5;
         public static int attackFrames = 14;

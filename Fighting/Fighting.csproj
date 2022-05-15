@@ -20,5 +20,9 @@
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+	
+    <PropertyGroup>
+        <RestoreFallbackFolders>clear</RestoreFallbackFolders>
+    </PropertyGroup>
 
 </Project>
