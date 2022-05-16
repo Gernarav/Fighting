@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Fighting
 {
-    partial class Play_form
+    partial class Tutorial_form
     {
         /// <summary>
         /// Required designer variable.
@@ -43,27 +43,25 @@ namespace Fighting
             this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(29, 31);
+            this.btnHome.Location = new System.Drawing.Point(29, 30);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(99, 101);
             this.btnHome.TabIndex = 5;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // Play_form
+            // Tutorial_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Fighting.Resource1.Play_form;
+            this.BackgroundImage = global::Fighting.Resource1.Tutorial_form;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.btnHome);
-            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Play_form";
-            this.Text = "Play_form";
+            this.Name = "Tutorial_form";
+            this.Text = "Tutorial";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Paint += new System.Windows.Forms.PaintEventHandler(View.PlayOnPaint);
             this.ResumeLayout(false);
 
         }

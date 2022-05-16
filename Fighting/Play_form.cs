@@ -19,11 +19,11 @@ namespace Fighting
 
             KeyPreview = true;
 
-            timer1.Interval = 33;
+            timer1.Interval = 100;
             timer1.Tick += new EventHandler(Update);
             timer1.Start();
 
-            View.Start();
+            View.StartPlay();
 
             KeyDown += new KeyEventHandler(OnPress);
             KeyUp += new KeyEventHandler(OnKeyUp);
@@ -106,7 +106,7 @@ namespace Fighting
                 //    View.player2.SetAnimation(4);
                 //    break;
                 case Keys.Escape:
-                    Application.Exit();
+                    openForm1();
                     break;
             }
         }
@@ -120,6 +120,14 @@ namespace Fighting
             //if (View.player2.isMoving)
             //    View.player2.Move();
             //Invalidate();
+        }
+
+        public void openForm1()
+        {
+            this.Hide();
+            Form1 formToSwitch = new Form1();
+            formToSwitch.ShowDialog();
+            this.Close();
         }
 
         List<Keys> player1Keys = new List<Keys>
@@ -139,5 +147,10 @@ namespace Fighting
             Keys.L,
             Keys.Enter,
         };
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            openForm1();
+        }
     }
 }
