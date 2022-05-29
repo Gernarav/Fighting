@@ -8,7 +8,7 @@ namespace Fighting
         public static Entity player1;
         public static Entity player2;
         public static Bitmap hero1 = new Bitmap(Resource1.Red_Left_Sprites);
-        public static Bitmap hero2 = new Bitmap(Resource1.Red_Right_Sprites);
+        public static Bitmap hero2 = new Bitmap(Resource1.Blue_Right_Sprites);
         public static void PlayOnPaint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -122,7 +122,7 @@ namespace Fighting
         public static void StartPlay()
         {
             player1 = new Entity
-                (0, 600, 
+                (435, 600, 
                 Hero.idleFrames, 
                 Hero.walkFrames, 
                 Hero.attackFrames, 
@@ -130,7 +130,7 @@ namespace Fighting
                 hero1);
 
             player2 = new Entity
-                (1000, 600,
+                (985, 600,
                 Hero.idleFrames,
                 Hero.walkFrames,
                 Hero.attackFrames,

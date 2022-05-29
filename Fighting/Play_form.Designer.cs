@@ -34,8 +34,14 @@ namespace Fighting
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.player1_hurtBox = new System.Windows.Forms.PictureBox();
+            this.player1_hitBox = new System.Windows.Forms.PictureBox();
+            this.player2_hurtBox = new System.Windows.Forms.PictureBox();
+            this.player2_hitBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.player1_hurtBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1_hitBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2_hurtBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2_hitBox)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHome
@@ -52,13 +58,45 @@ namespace Fighting
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
-            // pictureBox1
+            // player1_hurtBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(56, 578);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 407);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.player1_hurtBox.BackColor = System.Drawing.Color.Transparent;
+            this.player1_hurtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.player1_hurtBox.Location = new System.Drawing.Point(500, 624);
+            this.player1_hurtBox.Name = "player1_hurtBox";
+            this.player1_hurtBox.Size = new System.Drawing.Size(200, 363);
+            this.player1_hurtBox.TabIndex = 6;
+            this.player1_hurtBox.TabStop = false;
+            // 
+            // player1_hitBox
+            // 
+            this.player1_hitBox.BackColor = System.Drawing.Color.Transparent;
+            this.player1_hitBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.player1_hitBox.Location = new System.Drawing.Point(676, 763);
+            this.player1_hitBox.Name = "player1_hitBox";
+            this.player1_hitBox.Size = new System.Drawing.Size(282, 35);
+            this.player1_hitBox.TabIndex = 7;
+            this.player1_hitBox.TabStop = false;
+            // 
+            // player2_hurtBox
+            // 
+            this.player2_hurtBox.BackColor = System.Drawing.Color.Transparent;
+            this.player2_hurtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.player2_hurtBox.Location = new System.Drawing.Point(1220, 624);
+            this.player2_hurtBox.Name = "player2_hurtBox";
+            this.player2_hurtBox.Size = new System.Drawing.Size(200, 363);
+            this.player2_hurtBox.TabIndex = 8;
+            this.player2_hurtBox.TabStop = false;
+            // 
+            // player2_hitBox
+            // 
+            this.player2_hitBox.BackColor = System.Drawing.Color.Transparent;
+            this.player2_hitBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.player2_hitBox.Location = new System.Drawing.Point(962, 763);
+            this.player2_hitBox.Name = "player2_hitBox";
+            this.player2_hitBox.Size = new System.Drawing.Size(282, 35);
+            this.player2_hitBox.TabIndex = 9;
+            this.player2_hitBox.TabStop = false;
             // 
             // Play_form
             // 
@@ -66,7 +104,10 @@ namespace Fighting
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Fighting.Resource1.Play_form;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.player2_hitBox);
+            this.Controls.Add(this.player2_hurtBox);
+            this.Controls.Add(this.player1_hitBox);
+            this.Controls.Add(this.player1_hurtBox);
             this.Controls.Add(this.btnHome);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -75,7 +116,10 @@ namespace Fighting
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1_hurtBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1_hitBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2_hurtBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player2_hitBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,6 +128,9 @@ namespace Fighting
 
         private Timer timer1;
         private Button btnHome;
-        private PictureBox pictureBox1;
+        private PictureBox player1_hurtBox;
+        private PictureBox player1_hitBox;
+        private PictureBox player2_hurtBox;
+        private PictureBox player2_hitBox;
     }
 }

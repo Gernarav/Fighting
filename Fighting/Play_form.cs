@@ -12,7 +12,6 @@ namespace Fighting
 {
     public partial class Play_form : Form
     {
-
         public Play_form()
         {
             InitializeComponent();
@@ -26,6 +25,7 @@ namespace Fighting
             View.StartPlay();
 
             KeyDown += new KeyEventHandler(OnPress);
+
             Invalidate();
         }
 
@@ -86,13 +86,31 @@ namespace Fighting
 
         public void Update(object sender, EventArgs e)
         {
-            if (View.player1.isMoving)
-                View.player1.Move();
-
-            if (View.player2.isMoving)
-                View.player2.Move();
+            WinnerStatus();
+            if (View.player1.isMoving && player1_hurtBox.Right + View.player1.dirX + 50 < player2_hurtBox.Left)
+                View.player1.Move(player1_hurtBox, player1_hitBox, ClientSize.Width);
+            
+            if (View.player2.isMoving && player2_hurtBox.Left + View.player2.dirX - 50 > player1_hurtBox.Right)
+                View.player2.Move(player2_hurtBox, player2_hitBox, ClientSize.Width);
 
             Invalidate();
+        }
+
+        public void WinnerStatus()
+        {
+            if (View.player1.isAttacking && player1_hitBox.Right >= player2_hurtBox.Left)
+            {
+                timer1.Stop();
+                openForm1();
+            }
+
+
+            if (View.player2.isAttacking &&  player2_hitBox.Left <= player1_hurtBox.Right)
+            {
+                timer1.Stop();
+                openForm1();
+            }
+
         }
 
         public void openForm1()

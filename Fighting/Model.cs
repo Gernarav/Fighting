@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Fighting
 {
@@ -41,9 +42,24 @@ namespace Fighting
             currentLimit = idleFrames;
         }
 
-        public void Move()
+        public void Move(PictureBox hurtBox, PictureBox hitBox, int ClientSizeWidth)
         {
-            posX += dirX;
+            if(dirX < 0)
+            {
+                if(posX + dirX > 0)
+                {
+                    posX += dirX;
+                    hurtBox.Left += dirX;
+                    hitBox.Left += dirX;
+                }
+            }
+            else
+                if (posX + dirX < ClientSizeWidth)
+                {
+                    posX += dirX;
+                    hurtBox.Left += dirX;
+                    hitBox.Left += dirX;
+                }
         }
 
         public void SetAnimation(int currentAnimation)

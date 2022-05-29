@@ -63,6 +63,26 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Blue_Left_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Blue_Left_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Blue_Right_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Blue_Right_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap deadpool_map {
             get {
                 object obj = ResourceManager.GetObject("deadpool_map", resourceCulture);
