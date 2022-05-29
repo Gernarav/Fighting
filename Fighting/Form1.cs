@@ -11,7 +11,7 @@ namespace Fighting
             InitializeComponent();
             KeyPreview = true;
 
-            timer1.Interval = 100;
+            timer1.Interval = 50;
             timer1.Start();
 
             View.StartPlay();

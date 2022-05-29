@@ -13,13 +13,11 @@ namespace Fighting
         public int posY;
 
         public int dirX;
-        public int dirY;
         public bool isMoving;
+        public bool isAttacking;
 
         public int idleFrames;
         public int walkFrames;
-        public int sitFrames;
-        public int jumpFrames;
         public int attackFrames;
         public int deathFrames;
 
@@ -27,22 +25,17 @@ namespace Fighting
         public int currentFrame;
         public int currentLimit;
 
-        public Tuple<int, int> size;
+        public Image Sprites;
 
-        public Image spriteSheet;
-
-        public Entity(int posX, int posY, int idleFrames, int walkFrames, int sitFrames, int jumpFrames, int attackFrames, int deathFrames, Image spriteSheet)
+        public Entity(int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image spriteSheet)
         {
             this.posX = posX;
             this.posY = posY;
             this.idleFrames = idleFrames;
             this.walkFrames = walkFrames;
-            this.sitFrames = sitFrames;
-            this.jumpFrames = jumpFrames;
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
-            this.spriteSheet = spriteSheet;
-            this.size = new Tuple<int, int>(519, 476);
+            Sprites = spriteSheet;
             currentAnimation = 0;
             currentFrame = 0;
             currentLimit = idleFrames;
@@ -51,7 +44,6 @@ namespace Fighting
         public void Move()
         {
             posX += dirX;
-            posY += dirY;
         }
 
         public void SetAnimation(int currentAnimation)
@@ -67,16 +59,12 @@ namespace Fighting
                     currentLimit = walkFrames;
                     break;
                 case 2:
-                    currentLimit = sitFrames;
+                    currentLimit = walkFrames;
                     break;
                 case 3:
-                    currentLimit = jumpFrames;
+                    currentLimit = attackFrames;
                     break;
                 case 4:
-                    currentLimit = attackFrames;
-                    
-                    break;
-                case 5:
                     currentLimit = deathFrames;
                     break;
             }
@@ -85,11 +73,9 @@ namespace Fighting
 
     public static class Hero
     {
-        public static int idleFrames = 24;
-        public static int walkFrames = 24;
-        public static int sitFrames = 3;
-        public static int jumpFrames = 5;
-        public static int attackFrames = 14;
+        public static int idleFrames = 41;
+        public static int walkFrames = 13;
+        public static int attackFrames = 30;
         public static int deathFrames = 5;
     }
 }

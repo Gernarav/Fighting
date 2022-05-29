@@ -15,11 +15,11 @@ namespace Fighting
             InitializeComponent();
             KeyPreview = true;
 
-            timer1.Interval = 100;
+            timer1.Interval = 50;
             timer1.Tick += new EventHandler(Update);
             timer1.Start();
 
-            View.StartSettings();
+            //View.StartSettings();
 
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();
