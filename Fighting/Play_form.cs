@@ -15,15 +15,20 @@ namespace Fighting
     {
         public static bool roundIsOver;
         public static Entity winner;
+        public static string winnerName;
         public static Entity player1;
         public static Entity player2;
-        public static Bitmap hero1 = new Bitmap(Resource1.Left_Blue_Sprites);
-        public static Bitmap hero2 = new Bitmap(Resource1.Right_Red_Sprites);
-        public Play_form()
+        public static Bitmap hero1;
+        public static Bitmap hero2;
+        public static Image map;
+        public Play_form(Bitmap player1Skin, Bitmap player2Skin, Image selectedMap)
         {
             InitializeComponent();
 
             KeyPreview = true;
+
+            SetSkins(player1Skin, player2Skin);
+            SetMap(selectedMap);
 
             roundIsOver = false;
             timer1.Interval = 50;
@@ -35,6 +40,18 @@ namespace Fighting
             KeyDown += new KeyEventHandler(OnPress);
 
             Invalidate();
+        }
+
+        public void SetMap(Image selectedMap)
+        {
+            map = selectedMap;
+            this.BackgroundImage = map;
+        }
+
+        public void SetSkins(Bitmap player1Skin, Bitmap player2Skin)
+        {
+            hero1 = player1Skin;
+            hero2 = player2Skin;
         }
 
         public void CreatePlayers()
@@ -127,10 +144,22 @@ namespace Fighting
             timer1.Dispose();
             Thread.Sleep(500);
 
-            this.Hide();
-            Play_form formToSwitch = new Play_form();
-            formToSwitch.ShowDialog();
-            this.Close();
+            DialogResult gameOver = MessageBox.Show(
+                winnerName + " won!", "Play again?", 
+                MessageBoxButtons.YesNo);
+
+            switch (gameOver)
+            {
+                case DialogResult.Yes:
+                    this.Hide();
+                    Play_form formToSwitch = new Play_form(hero1, hero2, map);
+                    formToSwitch.ShowDialog();
+                    this.Close();
+                    break;
+                case DialogResult.No:
+                    openForm1();
+                    break;
+            }
         }
 
         public void SetMove(Entity player, int dirX, int SetAnimation)
@@ -187,6 +216,15 @@ namespace Fighting
         {
             roundIsOver = true;
             winner = player;
+            switch(player.side)
+            {
+                case 1:
+                    winnerName = "Player1";
+                    break;
+                case 2:
+                    winnerName = "Player2";
+                    break;
+            }
         }
 
         public void openForm1()
