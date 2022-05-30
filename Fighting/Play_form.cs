@@ -17,8 +17,8 @@ namespace Fighting
         public static Entity winner;
         public static Entity player1;
         public static Entity player2;
-        public static Bitmap hero1 = new Bitmap(Resource1.Red_Left_Sprites);
-        public static Bitmap hero2 = new Bitmap(Resource1.Blue_Right_Sprites);
+        public static Bitmap hero1 = new Bitmap(Resource1.Left_Blue_Sprites);
+        public static Bitmap hero2 = new Bitmap(Resource1.Right_Red_Sprites);
         public Play_form()
         {
             InitializeComponent();

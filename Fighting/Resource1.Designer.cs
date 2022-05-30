@@ -63,39 +63,49 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Blue_Left_Sprites {
-            get {
-                object obj = ResourceManager.GetObject("Blue_Left_Sprites", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Blue_Right_Sprites {
-            get {
-                object obj = ResourceManager.GetObject("Blue_Right_Sprites", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap deadpool_map {
-            get {
-                object obj = ResourceManager.GetObject("deadpool_map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap home_icon {
             get {
                 object obj = ResourceManager.GetObject("home_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Left_Blue_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Left_Blue_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Left_Green_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Left_Green_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Left_Red_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Left_Red_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Left_Yellow_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Left_Yellow_Sprites", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +163,9 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Red_Left_Sprites {
+        public static System.Drawing.Bitmap Right_Blue_Sprites {
             get {
-                object obj = ResourceManager.GetObject("Red_Left_Sprites", resourceCulture);
+                object obj = ResourceManager.GetObject("Right_Blue_Sprites", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +173,29 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Red_Right_Sprites {
+        public static System.Drawing.Bitmap Right_Green_Sprites {
             get {
-                object obj = ResourceManager.GetObject("Red_Right_Sprites", resourceCulture);
+                object obj = ResourceManager.GetObject("Right_Green_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Right_Red_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Right_Red_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Right_Yellow_Sprites {
+            get {
+                object obj = ResourceManager.GetObject("Right_Yellow_Sprites", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

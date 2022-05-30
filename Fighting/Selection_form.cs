@@ -10,6 +10,8 @@ namespace Fighting
 {
     public partial class Selection_form : Form
     {
+        public static string player1;
+        public static string player2;
         public static string selectedMap;
         public Selection_form()
         {
@@ -23,6 +25,7 @@ namespace Fighting
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();
         }
+
 
         public void OnPress(object sender, KeyEventArgs e)
         {
@@ -52,11 +55,6 @@ namespace Fighting
             openForm1();
         }
 
-        private void SelectionOnPaint(object sender, PaintEventArgs e)
-        {
-            View.SelectionOnPaint(sender, e);
-        }
-
         private void btnHome_Click_1(object sender, EventArgs e)
         {
             openForm1();
@@ -65,17 +63,26 @@ namespace Fighting
         private void Select_Skycraper_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Skycraper_map";
-
+            Skycraper_Selected.Visible = true;
+            Portal_Selected.Visible = false;
+            Bridge_Selected.Visible = false;
         }
 
         private void Select_Portal_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Portal_map";
+            Skycraper_Selected.Visible = false;
+            Portal_Selected.Visible = true;
+            Bridge_Selected.Visible = false;
         }
 
         private void Select_Bridge_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Bridge_map";
+            Skycraper_Selected.Visible = false;
+            Portal_Selected.Visible = false;
+            Bridge_Selected.Visible = true;
         }
+
     }
 }

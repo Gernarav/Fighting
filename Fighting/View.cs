@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 namespace Fighting
@@ -64,9 +65,16 @@ namespace Fighting
             }
         }
 
-        public static void SelectionOnPaint(object sender, PaintEventArgs e)
+        private void InitializeComponent()
         {
-            Graphics g = e.Graphics;
+            this.SuspendLayout();
+            // 
+            // View
+            // 
+            this.ClientSize = new System.Drawing.Size(282, 253);
+            this.Name = "View";
+            this.ResumeLayout(false);
+
         }
     }
 }
