@@ -6,6 +6,7 @@ namespace Fighting
 {
     class View : Form
     {
+
         public static void PlayOnPaint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -63,18 +64,6 @@ namespace Fighting
                 player.isMoving = false;
                 player.SetAnimation(0);
             }
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // View
-            // 
-            this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Name = "View";
-            this.ResumeLayout(false);
-
         }
     }
 }

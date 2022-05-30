@@ -18,10 +18,6 @@ namespace Fighting
         public bool isMoving;
         public bool isAttacking;
 
-        public int idleFrames;
-        public int walkFrames;
-        public int attackFrames;
-
         public int currentAnimation;
         public int currentFrame;
         public int currentLimit;
@@ -30,46 +26,36 @@ namespace Fighting
         public PictureBox hurtBox;
         public PictureBox hitBox;
 
-        public Entity(int posX, int posY, int side, int idleFrames, int walkFrames, int attackFrames, Image sprites, PictureBox hurtBox, PictureBox hitBox)
+        public Entity(int posX, int posY, int side, Image sprites, PictureBox hurtBox, PictureBox hitBox)
         {
             this.posX = posX;
             this.posY = posY;
             this.side = side;
-            this.idleFrames = idleFrames;
-            this.walkFrames = walkFrames;
-            this.attackFrames = attackFrames;
             this.sprites = sprites;
             this.hurtBox = hurtBox;
             this.hitBox = hitBox;
-            currentLimit = idleFrames;
+            currentLimit = 41;
         }
 
         public void SetAnimation(int currentAnimation)
         {
             this.currentAnimation = currentAnimation;
 
-            switch(currentAnimation)
+            switch (currentAnimation)
             {
                 case 0:
-                    currentLimit = idleFrames;
+                    currentLimit = 41;
                     break;
                 case 1:
-                    currentLimit = walkFrames;
+                    currentLimit = 13;
                     break;
                 case 2:
-                    currentLimit = walkFrames;
+                    currentLimit = 13;
                     break;
                 case 3:
-                    currentLimit = attackFrames;
+                    currentLimit = 30;
                     break;
             }
         }
-    }
-
-    public static class Hero
-    {
-        public static int idleFrames = 41;
-        public static int walkFrames = 13;
-        public static int attackFrames = 30;
     }
 }

@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Fighting
 {
-    public partial class Form1 : Form
+    public partial class Main_menu_form : Form
     {
-        public Form1()
+        public Main_menu_form()
         {
             InitializeComponent();
             KeyPreview = true;
@@ -23,6 +23,8 @@ namespace Fighting
             {
                 case Keys.Escape:
                     Application.Exit();
+                    break;
+                case Keys.Space:
                     break;
             }
         }

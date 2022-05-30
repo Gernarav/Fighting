@@ -34,6 +34,8 @@ namespace Fighting
                 case Keys.Escape:
                     openForm1();
                     break;
+                case Keys.Space:
+                    break;
             }
         }
 
@@ -45,7 +47,7 @@ namespace Fighting
         public void openForm1()
         {
             this.Hide();
-            Form1 formToSwitch = new Form1();
+            Main_menu_form formToSwitch = new Main_menu_form();
             formToSwitch.ShowDialog();
             this.Close();
         }
@@ -63,25 +65,16 @@ namespace Fighting
         private void Select_Skycraper_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Skycraper_map";
-            Skycraper_Selected.Visible = true;
-            Portal_Selected.Visible = false;
-            Bridge_Selected.Visible = false;
         }
 
         private void Select_Portal_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Portal_map";
-            Skycraper_Selected.Visible = false;
-            Portal_Selected.Visible = true;
-            Bridge_Selected.Visible = false;
         }
 
         private void Select_Bridge_map_Click(object sender, EventArgs e)
         {
             selectedMap = "Bridge_map";
-            Skycraper_Selected.Visible = false;
-            Portal_Selected.Visible = false;
-            Bridge_Selected.Visible = true;
         }
 
         private void Left_Select_Blue_Click(object sender, EventArgs e)

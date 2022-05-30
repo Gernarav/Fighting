@@ -104,21 +104,19 @@ namespace Fighting
             // 
             // Play_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Fighting.Resource1.Play_form;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1300, 739);
             this.Controls.Add(this.player2_hitBox);
             this.Controls.Add(this.player2_hurtBox);
             this.Controls.Add(this.player1_hitBox);
             this.Controls.Add(this.player1_hurtBox);
             this.Controls.Add(this.btnHome);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Play_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Play_form";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.OnPaint);
             ((System.ComponentModel.ISupportInitialize)(this.player1_hurtBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player1_hitBox)).EndInit();

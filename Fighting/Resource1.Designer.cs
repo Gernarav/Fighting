@@ -153,16 +153,6 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Play_form {
-            get {
-                object obj = ResourceManager.GetObject("Play_form", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Portal_map {
             get {
                 object obj = ResourceManager.GetObject("Portal_map", resourceCulture);
@@ -233,29 +223,9 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap settings_button {
-            get {
-                object obj = ResourceManager.GetObject("settings_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Settings_form {
             get {
                 object obj = ResourceManager.GetObject("Settings_form", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap settings_icon {
-            get {
-                object obj = ResourceManager.GetObject("settings_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,26 +246,6 @@ namespace Fighting {
         public static System.Drawing.Bitmap Skycraper_map {
             get {
                 object obj = ResourceManager.GetObject("Skycraper_map", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap tutorial_button {
-            get {
-                object obj = ResourceManager.GetObject("tutorial_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Tutorial_form {
-            get {
-                object obj = ResourceManager.GetObject("Tutorial_form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

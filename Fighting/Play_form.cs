@@ -57,19 +57,13 @@ namespace Fighting
         public void CreatePlayers()
         {
             player1 = new Entity
-                (435, 600, 1,
-                Hero.idleFrames,
-                Hero.walkFrames,
-                Hero.attackFrames,
+                (30, 300, 1, 
                 hero1,
                 player1_hurtBox,
                 player1_hitBox);
 
             player2 = new Entity
-                (985, 600, 2,
-                Hero.idleFrames,
-                Hero.walkFrames,
-                Hero.attackFrames,
+                (730, 300, 2,
                 hero2,
                 player2_hurtBox,
                 player2_hitBox);
@@ -119,6 +113,8 @@ namespace Fighting
                 case Keys.Escape:
                     openForm1();
                     break;
+                case Keys.Space:
+                    break;
             }
         }
 
@@ -143,7 +139,7 @@ namespace Fighting
             Thread.Sleep(500);
 
             DialogResult gameOver = MessageBox.Show(
-                winnerName + " won!", "Play again?", 
+                "Play again?", winnerName + " won!",
                 MessageBoxButtons.YesNo);
 
             switch (gameOver)
@@ -228,7 +224,7 @@ namespace Fighting
         public void openForm1()
         {
             this.Hide();
-            Form1 formToSwitch = new Form1();
+            Main_menu_form formToSwitch = new Main_menu_form();
             formToSwitch.ShowDialog();
             this.Close();
         }

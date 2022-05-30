@@ -1,10 +1,9 @@
-﻿
-using System.Drawing;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace Fighting
 {
-    partial class Form1
+    partial class Main_menu_form
     {
         /// <summary>
         ///  Required designer variable.
@@ -45,9 +44,9 @@ namespace Fighting
             this.btnPlay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Location = new System.Drawing.Point(640, 418);
+            this.btnPlay.Location = new System.Drawing.Point(433, 285);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(641, 122);
+            this.btnPlay.Size = new System.Drawing.Size(433, 84);
             this.btnPlay.TabIndex = 0;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
@@ -59,26 +58,25 @@ namespace Fighting
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Location = new System.Drawing.Point(31, 32);
+            this.btnExit.Location = new System.Drawing.Point(21, 22);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 101);
+            this.btnExit.Size = new System.Drawing.Size(65, 68);
             this.btnExit.TabIndex = 3;
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // Form1
+            // Main_menu_form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = global::Fighting.Resource1.Main_menu_form;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1282, 692);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPlay);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Main_menu_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Fighting";
             this.ResumeLayout(false);
 
         }
