@@ -19,8 +19,6 @@ namespace Fighting
             timer1.Tick += new EventHandler(Update);
             timer1.Start();
 
-            //View.StartSettings();
-
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();
         }
@@ -51,6 +49,11 @@ namespace Fighting
         private void btnHome_Click(object sender, EventArgs e)
         {
             openForm1();
+        }
+
+        private void SettingsOnPaint(object sender, PaintEventArgs e)
+        {
+            View.SettingsOnPaint(sender, e);
         }
     }
 }

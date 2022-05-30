@@ -67,6 +67,7 @@ namespace Fighting
             this.player1_hurtBox.Size = new System.Drawing.Size(200, 363);
             this.player1_hurtBox.TabIndex = 6;
             this.player1_hurtBox.TabStop = false;
+            this.player1_hurtBox.Visible = false;
             // 
             // player1_hitBox
             // 
@@ -77,6 +78,7 @@ namespace Fighting
             this.player1_hitBox.Size = new System.Drawing.Size(282, 35);
             this.player1_hitBox.TabIndex = 7;
             this.player1_hitBox.TabStop = false;
+            this.player1_hitBox.Visible = false;
             // 
             // player2_hurtBox
             // 
@@ -87,6 +89,7 @@ namespace Fighting
             this.player2_hurtBox.Size = new System.Drawing.Size(200, 363);
             this.player2_hurtBox.TabIndex = 8;
             this.player2_hurtBox.TabStop = false;
+            this.player2_hurtBox.Visible = false;
             // 
             // player2_hitBox
             // 
@@ -97,6 +100,7 @@ namespace Fighting
             this.player2_hitBox.Size = new System.Drawing.Size(282, 35);
             this.player2_hitBox.TabIndex = 9;
             this.player2_hitBox.TabStop = false;
+            this.player2_hitBox.Visible = false;
             // 
             // Play_form
             // 
@@ -128,9 +132,9 @@ namespace Fighting
 
         private Timer timer1;
         private Button btnHome;
-        private PictureBox player1_hurtBox;
-        private PictureBox player1_hitBox;
-        private PictureBox player2_hurtBox;
-        private PictureBox player2_hitBox;
+        public PictureBox player1_hurtBox;
+        public PictureBox player1_hitBox;
+        public PictureBox player2_hurtBox;
+        public PictureBox player2_hitBox;
     }
 }

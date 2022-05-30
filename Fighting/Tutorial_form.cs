@@ -18,7 +18,7 @@ namespace Fighting
             timer1.Interval = 100;
             timer1.Start();
 
-            View.StartPlay();
+            //View.StartPlay();
 
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();

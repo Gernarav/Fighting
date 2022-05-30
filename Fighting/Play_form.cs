@@ -7,11 +7,16 @@ using System.Drawing;
 using System.Text;
 using System.Timers;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace Fighting
 {
     public partial class Play_form : Form
     {
+        public static Entity player1;
+        public static Entity player2;
+        public static Bitmap hero1 = new Bitmap(Resource1.Red_Left_Sprites);
+        public static Bitmap hero2 = new Bitmap(Resource1.Blue_Right_Sprites);
         public Play_form()
         {
             InitializeComponent();
@@ -22,57 +27,69 @@ namespace Fighting
             timer1.Tick += new EventHandler(Update);
             timer1.Start();
 
-            View.StartPlay();
+            CreatePlayers();
 
             KeyDown += new KeyEventHandler(OnPress);
 
             Invalidate();
         }
 
+        public void CreatePlayers()
+        {
+            player1 = new Entity
+                (435, 600, 1,
+                Hero.idleFrames,
+                Hero.walkFrames,
+                Hero.attackFrames,
+                Hero.deathFrames,
+                hero1,
+                player1_hurtBox,
+                player1_hitBox);
+
+            player2 = new Entity
+                (985, 600, 2,
+                Hero.idleFrames,
+                Hero.walkFrames,
+                Hero.attackFrames,
+                Hero.deathFrames,
+                hero2,
+                player2_hurtBox,
+                player2_hitBox);
+        }
+
         public void OnPress(object sender, KeyEventArgs e)
         {
-            if(!View.player1.isMoving)
+            if(!player1.isMoving)
                 switch (e.KeyCode)
                 {
                     case Keys.D:
-                        View.player1.dirX = 50;
-                        View.player1.isMoving = true;
-                        View.player1.SetAnimation(1);
+                        SetMove(player1, 50, 1);
+                        player1.dirX = 50;
+                        player1.isMoving = true;
+                        player1.SetAnimation(1);
                         break;
                     case Keys.A:
-                        View.player1.dirX = -50;
-                        View.player1.isMoving = true;
-                        View.player1.SetAnimation(2);
+                        SetMove(player1, -50, 2);
                         break;
                     case Keys.F:
-                        View.player1.dirX = 30;
-                        View.player1.isMoving = true;
-                        View.player1.isAttacking = true;
-                        View.player1.SetAnimation(3);
+                        SetMove(player1, 30, 3);
                         break;
                     case Keys.Escape:
                         openForm1();
                         break;
                 }
 
-            if (!View.player2.isMoving)
+            if (!player2.isMoving)
                 switch (e.KeyCode)
                 {
                     case Keys.L:
-                        View.player2.dirX = 50;
-                        View.player2.isMoving = true;
-                        View.player2.SetAnimation(1);
+                        SetMove(player2, 50, 1);
                         break;
                     case Keys.J:
-                        View.player2.dirX = -50;
-                        View.player2.isMoving = true;
-                        View.player2.SetAnimation(2);
+                        SetMove(player2, -50, 2);
                         break;
                     case Keys.I:
-                        View.player2.dirX = -30;
-                        View.player2.isMoving = true;
-                        View.player2.isAttacking = true;
-                        View.player2.SetAnimation(3);
+                        SetMove(player2, -30, 3);
                         break;
                 }
 
@@ -87,28 +104,62 @@ namespace Fighting
         public void Update(object sender, EventArgs e)
         {
             WinnerStatus();
-            if (View.player1.isMoving && player1_hurtBox.Right + View.player1.dirX + 50 < player2_hurtBox.Left)
-                View.player1.Move(player1_hurtBox, player1_hitBox, ClientSize.Width);
+
+            if (player1.isMoving)
+                MakeMove(player1);
             
-            if (View.player2.isMoving && player2_hurtBox.Left + View.player2.dirX - 50 > player1_hurtBox.Right)
-                View.player2.Move(player2_hurtBox, player2_hitBox, ClientSize.Width);
+            if (player2.isMoving)
+                MakeMove(player2);
 
             Invalidate();
         }
 
+        public void SetMove(Entity player, int dirX, int SetAnimation)
+        {
+            if (SetAnimation == 3)
+                player.isAttacking = true;
+            player.isMoving = true;
+            player.dirX = dirX;
+            player.SetAnimation(SetAnimation);
+        }
+
+        public bool InBorders(Entity player)
+        {
+            switch(player.side)
+            {
+                case 1:
+                    if (player1.posX + player1.dirX > 0 && player1.hurtBox.Right + player1.dirX + 50 < player2.hurtBox.Left)
+                        return true;
+                    return false;
+                case 2:
+                    if (player2.hurtBox.Left + player2.dirX - 50 > player1_hurtBox.Right && player2.hurtBox.Right + player2.dirX + 50 < ClientSize.Width)
+                        return true;
+                    return false;
+            }
+            return false;
+        }
+
+        public void MakeMove(Entity player)
+        {
+            if (InBorders(player))
+            {
+                player.posX += player.dirX;
+                player.hurtBox.Left += player.dirX;
+                player.hitBox.Left += player.dirX;
+            }
+        }
+
         public void WinnerStatus()
         {
-            if (View.player1.isAttacking && player1_hitBox.Right >= player2_hurtBox.Left)
+            if (player1.isAttacking && player1_hitBox.Right >= player2_hurtBox.Left)
             {
                 timer1.Stop();
-                openForm1();
             }
 
 
-            if (View.player2.isAttacking &&  player2_hitBox.Left <= player1_hurtBox.Right)
+            if (player2.isAttacking &&  player2_hitBox.Left <= player1_hurtBox.Right)
             {
                 timer1.Stop();
-                openForm1();
             }
 
         }

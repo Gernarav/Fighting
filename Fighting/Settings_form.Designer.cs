@@ -63,7 +63,7 @@ namespace Fighting
             this.Text = "Settings";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Paint += new System.Windows.Forms.PaintEventHandler(View.SettingsOnPaint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SettingsOnPaint);
             this.ResumeLayout(false);
 
         }

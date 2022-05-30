@@ -12,6 +12,7 @@ namespace Fighting
     {
         public int posX;
         public int posY;
+        public int side;
 
         public int dirX;
         public bool isMoving;
@@ -26,40 +27,23 @@ namespace Fighting
         public int currentFrame;
         public int currentLimit;
 
-        public Image Sprites;
+        public Image sprites;
+        public PictureBox hurtBox;
+        public PictureBox hitBox;
 
-        public Entity(int posX, int posY, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image spriteSheet)
+        public Entity(int posX, int posY, int side, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image sprites, PictureBox hurtBox, PictureBox hitBox)
         {
             this.posX = posX;
             this.posY = posY;
+            this.side = side;
             this.idleFrames = idleFrames;
             this.walkFrames = walkFrames;
             this.attackFrames = attackFrames;
             this.deathFrames = deathFrames;
-            Sprites = spriteSheet;
-            currentAnimation = 0;
-            currentFrame = 0;
+            this.sprites = sprites;
+            this.hurtBox = hurtBox;
+            this.hitBox = hitBox;
             currentLimit = idleFrames;
-        }
-
-        public void Move(PictureBox hurtBox, PictureBox hitBox, int ClientSizeWidth)
-        {
-            if(dirX < 0)
-            {
-                if(posX + dirX > 0)
-                {
-                    posX += dirX;
-                    hurtBox.Left += dirX;
-                    hitBox.Left += dirX;
-                }
-            }
-            else
-                if (posX + dirX < ClientSizeWidth)
-                {
-                    posX += dirX;
-                    hurtBox.Left += dirX;
-                    hitBox.Left += dirX;
-                }
         }
 
         public void SetAnimation(int currentAnimation)

@@ -5,7 +5,6 @@ namespace Fighting
 {
     public partial class Form1 : Form
     {
-        //Controller
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +13,7 @@ namespace Fighting
             timer1.Interval = 50;
             timer1.Start();
 
-            View.StartPlay();
+            //View.StartPlay();
 
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();
