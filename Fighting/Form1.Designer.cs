@@ -35,7 +35,6 @@ namespace Fighting
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPlay = new System.Windows.Forms.Button();
-            this.btnTutorial = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,20 +51,6 @@ namespace Fighting
             this.btnPlay.TabIndex = 0;
             this.btnPlay.UseVisualStyleBackColor = true;
             this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
-            // btnTutorial
-            // 
-            this.btnTutorial.BackColor = System.Drawing.Color.Transparent;
-            this.btnTutorial.FlatAppearance.BorderSize = 0;
-            this.btnTutorial.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnTutorial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnTutorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTutorial.Location = new System.Drawing.Point(640, 572);
-            this.btnTutorial.Name = "btnTutorial";
-            this.btnTutorial.Size = new System.Drawing.Size(641, 122);
-            this.btnTutorial.TabIndex = 1;
-            this.btnTutorial.UseVisualStyleBackColor = true;
-            this.btnTutorial.Click += new System.EventHandler(this.btnTutorial_Click);
             // 
             // btnExit
             // 
@@ -88,7 +73,6 @@ namespace Fighting
             this.BackgroundImage = global::Fighting.Resource1.Main_menu_form;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnTutorial);
             this.Controls.Add(this.btnPlay);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -104,7 +88,6 @@ namespace Fighting
 
         public Timer timer1;
         private Button btnPlay;
-        private Button btnTutorial;
         private Button btnExit;
     }
 }

@@ -61,7 +61,6 @@ namespace Fighting
                 Hero.idleFrames,
                 Hero.walkFrames,
                 Hero.attackFrames,
-                Hero.deathFrames,
                 hero1,
                 player1_hurtBox,
                 player1_hitBox);
@@ -71,7 +70,6 @@ namespace Fighting
                 Hero.idleFrames,
                 Hero.walkFrames,
                 Hero.attackFrames,
-                Hero.deathFrames,
                 hero2,
                 player2_hurtBox,
                 player2_hitBox);

@@ -135,7 +135,6 @@ namespace Fighting
             this.Bridge_Selected.Size = new System.Drawing.Size(470, 269);
             this.Bridge_Selected.TabIndex = 11;
             this.Bridge_Selected.TabStop = false;
-            this.Bridge_Selected.Visible = false;
             // 
             // Left_Select_Blue
             // 

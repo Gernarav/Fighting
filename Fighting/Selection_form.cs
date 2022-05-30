@@ -12,7 +12,7 @@ namespace Fighting
     {
         public static string player1Skin = "Left_Blue_Sprites";
         public static string player2Skin = "Right_Red_Sprites";
-        public static string selectedMap = "Skycraper_map";
+        public static string selectedMap = "Bridge_map";
         public Selection_form()
         {
             InitializeComponent();

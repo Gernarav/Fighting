@@ -21,7 +21,6 @@ namespace Fighting
         public int idleFrames;
         public int walkFrames;
         public int attackFrames;
-        public int deathFrames;
 
         public int currentAnimation;
         public int currentFrame;
@@ -31,7 +30,7 @@ namespace Fighting
         public PictureBox hurtBox;
         public PictureBox hitBox;
 
-        public Entity(int posX, int posY, int side, int idleFrames, int walkFrames, int attackFrames, int deathFrames, Image sprites, PictureBox hurtBox, PictureBox hitBox)
+        public Entity(int posX, int posY, int side, int idleFrames, int walkFrames, int attackFrames, Image sprites, PictureBox hurtBox, PictureBox hitBox)
         {
             this.posX = posX;
             this.posY = posY;
@@ -39,7 +38,6 @@ namespace Fighting
             this.idleFrames = idleFrames;
             this.walkFrames = walkFrames;
             this.attackFrames = attackFrames;
-            this.deathFrames = deathFrames;
             this.sprites = sprites;
             this.hurtBox = hurtBox;
             this.hitBox = hitBox;
@@ -64,9 +62,6 @@ namespace Fighting
                 case 3:
                     currentLimit = attackFrames;
                     break;
-                case 4:
-                    currentLimit = deathFrames;
-                    break;
             }
         }
     }
@@ -76,6 +71,5 @@ namespace Fighting
         public static int idleFrames = 41;
         public static int walkFrames = 13;
         public static int attackFrames = 30;
-        public static int deathFrames = 5;
     }
 }

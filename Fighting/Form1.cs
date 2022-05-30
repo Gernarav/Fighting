@@ -35,14 +35,6 @@ namespace Fighting
             this.Close();
         }
 
-        private void btnTutorial_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Tutorial_form formToSwitch = new Tutorial_form();
-            formToSwitch.ShowDialog();
-            this.Close();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
