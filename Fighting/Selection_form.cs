@@ -8,9 +8,10 @@ using System.Windows.Forms;
 
 namespace Fighting
 {
-    public partial class Settings_form : Form
+    public partial class Selection_form : Form
     {
-        public Settings_form()
+        public static string selectedMap;
+        public Selection_form()
         {
             InitializeComponent();
             KeyPreview = true;
@@ -51,9 +52,30 @@ namespace Fighting
             openForm1();
         }
 
-        private void SettingsOnPaint(object sender, PaintEventArgs e)
+        private void SelectionOnPaint(object sender, PaintEventArgs e)
         {
-            View.SettingsOnPaint(sender, e);
+            View.SelectionOnPaint(sender, e);
+        }
+
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            openForm1();
+        }
+
+        private void Select_Skycraper_map_Click(object sender, EventArgs e)
+        {
+            selectedMap = "Skycraper_map";
+
+        }
+
+        private void Select_Portal_map_Click(object sender, EventArgs e)
+        {
+            selectedMap = "Portal_map";
+        }
+
+        private void Select_Bridge_map_Click(object sender, EventArgs e)
+        {
+            selectedMap = "Bridge_map";
         }
     }
 }

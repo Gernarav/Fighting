@@ -51,6 +51,9 @@ namespace Fighting
                 width, height,
                 GraphicsUnit.Pixel);
 
+            if (player.isAttacking && player.currentFrame >= 20)
+                player.isAttacking = false;
+
             if (player.currentFrame < player.currentLimit - 1)
                 player.currentFrame++;
             else
@@ -61,7 +64,7 @@ namespace Fighting
             }
         }
 
-        public static void SettingsOnPaint(object sender, PaintEventArgs e)
+        public static void SelectionOnPaint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
         }

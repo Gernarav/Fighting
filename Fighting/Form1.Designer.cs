@@ -36,7 +36,6 @@ namespace Fighting
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnTutorial = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -68,22 +67,6 @@ namespace Fighting
             this.btnTutorial.UseVisualStyleBackColor = true;
             this.btnTutorial.Click += new System.EventHandler(this.btnTutorial_Click);
             // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.BackgroundImage = global::Fighting.Resource1.settings_button;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(640, 728);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(641, 122);
-            this.btnSettings.TabIndex = 2;
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -105,7 +88,6 @@ namespace Fighting
             this.BackgroundImage = global::Fighting.Resource1.Main_menu_form;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnTutorial);
             this.Controls.Add(this.btnPlay);
             this.DoubleBuffered = true;
@@ -123,7 +105,6 @@ namespace Fighting
         public Timer timer1;
         private Button btnPlay;
         private Button btnTutorial;
-        private Button btnSettings;
         private Button btnExit;
     }
 }

@@ -13,6 +13,8 @@ namespace Fighting
 {
     public partial class Play_form : Form
     {
+        public static bool roundIsOver;
+        public static Entity winner;
         public static Entity player1;
         public static Entity player2;
         public static Bitmap hero1 = new Bitmap(Resource1.Red_Left_Sprites);
@@ -23,6 +25,7 @@ namespace Fighting
 
             KeyPreview = true;
 
+            roundIsOver = false;
             timer1.Interval = 50;
             timer1.Tick += new EventHandler(Update);
             timer1.Start();
@@ -59,40 +62,43 @@ namespace Fighting
 
         public void OnPress(object sender, KeyEventArgs e)
         {
-            if(!player1.isMoving)
-                switch (e.KeyCode)
-                {
-                    case Keys.D:
-                        SetMove(player1, 50, 1);
-                        player1.dirX = 50;
-                        player1.isMoving = true;
-                        player1.SetAnimation(1);
-                        break;
-                    case Keys.A:
-                        SetMove(player1, -50, 2);
-                        break;
-                    case Keys.F:
-                        SetMove(player1, 30, 3);
-                        break;
-                    case Keys.Escape:
-                        openForm1();
-                        break;
-                }
+            if(!roundIsOver)
+            {
+                if (!player1.isMoving)
+                    switch (e.KeyCode)
+                    {
+                        case Keys.D:
+                            SetMove(player1, 30, 1);
+                            player1.dirX = 30;
+                            player1.isMoving = true;
+                            player1.SetAnimation(1);
+                            break;
+                        case Keys.A:
+                            SetMove(player1, -30, 2);
+                            break;
+                        case Keys.F:
+                            SetMove(player1, 20, 3);
+                            break;
+                        case Keys.Escape:
+                            openForm1();
+                            break;
+                    }
 
-            if (!player2.isMoving)
-                switch (e.KeyCode)
-                {
-                    case Keys.L:
-                        SetMove(player2, 50, 1);
-                        break;
-                    case Keys.J:
-                        SetMove(player2, -50, 2);
-                        break;
-                    case Keys.I:
-                        SetMove(player2, -30, 3);
-                        break;
-                }
-
+                if (!player2.isMoving)
+                    switch (e.KeyCode)
+                    {
+                        case Keys.L:
+                            SetMove(player2, 30, 1);
+                            break;
+                        case Keys.J:
+                            SetMove(player2, -30, 2);
+                            break;
+                        case Keys.I:
+                            SetMove(player2, -20, 3);
+                            break;
+                    }
+            }
+            
             switch(e.KeyCode)
             {
                 case Keys.Escape:
@@ -103,15 +109,28 @@ namespace Fighting
 
         public void Update(object sender, EventArgs e)
         {
-            WinnerStatus();
+            if(!roundIsOver)
+            {
+                WinnerStatus();
 
-            if (player1.isMoving)
-                MakeMove(player1);
-            
-            if (player2.isMoving)
-                MakeMove(player2);
+                if (player1.isMoving)
+                    MakeMove(player1);
 
-            Invalidate();
+                if (player2.isMoving)
+                    MakeMove(player2);
+                Invalidate();
+                return;
+            }
+
+
+            timer1.Stop();
+            timer1.Dispose();
+            Thread.Sleep(500);
+
+            this.Hide();
+            Play_form formToSwitch = new Play_form();
+            formToSwitch.ShowDialog();
+            this.Close();
         }
 
         public void SetMove(Entity player, int dirX, int SetAnimation)
@@ -153,15 +172,21 @@ namespace Fighting
         {
             if (player1.isAttacking && player1_hitBox.Right >= player2_hurtBox.Left)
             {
-                timer1.Stop();
+                RoundOver(player1);
             }
 
 
             if (player2.isAttacking &&  player2_hitBox.Left <= player1_hurtBox.Right)
             {
-                timer1.Stop();
+                RoundOver(player2);
             }
 
+        }
+
+        public void RoundOver(Entity player)
+        {
+            roundIsOver = true;
+            winner = player;
         }
 
         public void openForm1()

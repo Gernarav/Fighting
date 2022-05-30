@@ -13,8 +13,6 @@ namespace Fighting
             timer1.Interval = 50;
             timer1.Start();
 
-            //View.StartPlay();
-
             KeyDown += new KeyEventHandler(OnPress);
             Invalidate();
         }
@@ -32,7 +30,7 @@ namespace Fighting
         private void btnPlay_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Play_form formToSwitch = new Play_form();
+            Selection_form formToSwitch = new Selection_form();
             formToSwitch.ShowDialog();
             this.Close();
         }
@@ -41,14 +39,6 @@ namespace Fighting
         {
             this.Hide();
             Tutorial_form formToSwitch = new Tutorial_form();
-            formToSwitch.ShowDialog();
-            this.Close();
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Settings_form formToSwitch = new Settings_form();
             formToSwitch.ShowDialog();
             this.Close();
         }

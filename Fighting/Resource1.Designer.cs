@@ -113,6 +113,16 @@ namespace Fighting {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Map_Selected {
+            get {
+                object obj = ResourceManager.GetObject("Map_Selected", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap play_button {
             get {
                 object obj = ResourceManager.GetObject("play_button", resourceCulture);
@@ -156,6 +166,16 @@ namespace Fighting {
         public static System.Drawing.Bitmap Red_Right_Sprites {
             get {
                 object obj = ResourceManager.GetObject("Red_Right_Sprites", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Selection_form {
+            get {
+                object obj = ResourceManager.GetObject("Selection_form", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

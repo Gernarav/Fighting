@@ -62,9 +62,9 @@ namespace Fighting
             // 
             this.player1_hurtBox.BackColor = System.Drawing.Color.Transparent;
             this.player1_hurtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.player1_hurtBox.Location = new System.Drawing.Point(500, 624);
+            this.player1_hurtBox.Location = new System.Drawing.Point(526, 624);
             this.player1_hurtBox.Name = "player1_hurtBox";
-            this.player1_hurtBox.Size = new System.Drawing.Size(200, 363);
+            this.player1_hurtBox.Size = new System.Drawing.Size(150, 363);
             this.player1_hurtBox.TabIndex = 6;
             this.player1_hurtBox.TabStop = false;
             this.player1_hurtBox.Visible = false;
@@ -73,9 +73,9 @@ namespace Fighting
             // 
             this.player1_hitBox.BackColor = System.Drawing.Color.Transparent;
             this.player1_hitBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.player1_hitBox.Location = new System.Drawing.Point(676, 763);
+            this.player1_hitBox.Location = new System.Drawing.Point(726, 763);
             this.player1_hitBox.Name = "player1_hitBox";
-            this.player1_hitBox.Size = new System.Drawing.Size(282, 35);
+            this.player1_hitBox.Size = new System.Drawing.Size(253, 35);
             this.player1_hitBox.TabIndex = 7;
             this.player1_hitBox.TabStop = false;
             this.player1_hitBox.Visible = false;
@@ -84,9 +84,9 @@ namespace Fighting
             // 
             this.player2_hurtBox.BackColor = System.Drawing.Color.Transparent;
             this.player2_hurtBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.player2_hurtBox.Location = new System.Drawing.Point(1220, 624);
+            this.player2_hurtBox.Location = new System.Drawing.Point(1282, 624);
             this.player2_hurtBox.Name = "player2_hurtBox";
-            this.player2_hurtBox.Size = new System.Drawing.Size(200, 363);
+            this.player2_hurtBox.Size = new System.Drawing.Size(150, 363);
             this.player2_hurtBox.TabIndex = 8;
             this.player2_hurtBox.TabStop = false;
             this.player2_hurtBox.Visible = false;
@@ -95,9 +95,9 @@ namespace Fighting
             // 
             this.player2_hitBox.BackColor = System.Drawing.Color.Transparent;
             this.player2_hitBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.player2_hitBox.Location = new System.Drawing.Point(962, 763);
+            this.player2_hitBox.Location = new System.Drawing.Point(1067, 729);
             this.player2_hitBox.Name = "player2_hitBox";
-            this.player2_hitBox.Size = new System.Drawing.Size(282, 35);
+            this.player2_hitBox.Size = new System.Drawing.Size(253, 35);
             this.player2_hitBox.TabIndex = 9;
             this.player2_hitBox.TabStop = false;
             this.player2_hitBox.Visible = false;
